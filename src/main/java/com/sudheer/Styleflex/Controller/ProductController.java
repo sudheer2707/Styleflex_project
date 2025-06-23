@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sudheer.Styleflex.Model.Products;
+import com.sudheer.Styleflex.ProductRepo.CategoryRepository;
 import com.sudheer.Styleflex.ProductRepo.ProductsRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -26,6 +27,10 @@ public class ProductController {
 
     @Autowired
     private ProductsRepository productsRepository;
+
+    @SuppressWarnings("unused")
+    @Autowired
+    private CategoryRepository categoryRepository;
 
     @PostMapping("/add")
     public Products addProduct(@RequestBody Products products){
@@ -46,8 +51,8 @@ public class ProductController {
              products.setName(updateProducts.getName());
            products.setDescription(updateProducts.getDescription());
             products.setPrice(updateProducts.getPrice());
-            products.setCategory(updateProducts.getCategory());
             products.setImageUrl(updateProducts.getImageUrl());
+            products.setCategory(updateProducts.getCategory());
             return productsRepository.save(products);
         }).orElse(null); 
         
