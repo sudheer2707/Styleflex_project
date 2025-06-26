@@ -29,7 +29,7 @@ public class Order {
     private double totalAmount;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<Order> items;
+    private List<OrderItem> items;
 
     public Order() {}
 
@@ -50,7 +50,7 @@ public class Order {
     public double getTotalAmount(){
         return totalAmount;
     }
-    public List<Order> getItems() {
+    public List<OrderItem> getItems() {
         return items;
     }
     public void setId(long id){
@@ -65,7 +65,7 @@ public class Order {
    public void setTotalAmount(double totalAmount){
     this.totalAmount = totalAmount;
    }
-   public void setItems(List<Order> items){
+   public void setItems(List<OrderItem> items){
     this.items = items;
    }
 }

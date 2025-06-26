@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sudheer.Styleflex.Model.Products;
@@ -28,7 +29,6 @@ public class ProductController {
     @Autowired
     private ProductsRepository productsRepository;
 
-    @SuppressWarnings("unused")
     @Autowired
     private CategoryRepository categoryRepository;
 
@@ -66,6 +66,17 @@ public class ProductController {
             return "Product not found.";
         }
 }
+@GetMapping("/search")
+public List<Products> searchProducts(@RequestParam String name) {
+    return productsRepository.findByNameContainingIgnoreCase(name);
+}
+@GetMapping("/filter/category/{name}")
+public List<Products> getProductsByCategory(@PathVariable String name) {
+    return categoryRepository.findByNameIgnoreCase(name)
+            .map(productsRepository::findByCategory)
+            .orElseGet(List::of);  // returns empty list if not found
+}
+
 }
     
     
