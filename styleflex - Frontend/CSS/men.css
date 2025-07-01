@@ -1,0 +1,163 @@
+/* Reset & base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f7f7f7;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Container utility */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Navbar */
+header {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #f2a922;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+  }
+
+  nav.show {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    padding: 10px;
+    background-color: #1e1e1e;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
+
+/* Section Title */
+.product-section h2 {
+  font-size: 2rem;
+  margin: 40px 0 20px;
+  text-align: center;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+/* Product Card */
+.product-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+  padding: 15px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.product-card .price {
+  font-weight: bold;
+  color: #1e1e1e;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #1e1e1e;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

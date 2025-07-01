@@ -37,6 +37,7 @@ public class CategoryController {
         Optional<com.sudheer.Styleflex.Model.Category> category = categoryRepository.findById(id);
         return category.orElse(null);
     } 
+  
 
     }
     

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Women's Collection - StyleFlex</title>
+  <link rel="stylesheet" href="../CSS/women.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">StyleFlex</a>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <nav id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="men.html">Men</a></li>
+          <li><a href="women.html">Women</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Product Grid -->
+  <section class="product-section container">
+    <h2 style="text-align: center; margin: 30px 0;">Women's Collection</h2>
+    <div id="product-list" class="product-grid">
+      <!-- JS injects product cards here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 StyleFlex. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../JS/women-products.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
