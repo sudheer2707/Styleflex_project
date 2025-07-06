@@ -10,32 +10,37 @@ import com.sudheer.Styleflex.Model.User;
 import com.sudheer.Styleflex.ProductRepo.UserRepository;
 
 @Service
-public class UserService implements ServiceInterface{
+public class UserService {
 
     @Autowired
     private UserRepository userRepository;
 
-@Autowired
- private BCryptPasswordEncoder passwordEncoder;
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
-@Override
- public User registerUser(User user) {
+    // Register new user
+    public User registerUser(User user) {
+        Optional<User> existingUser = userRepository.findByEmail(user.getEmail());
+        if (existingUser.isPresent()) {
+            throw new RuntimeException("Email already registered!");
+        }
+
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
-     @Override
-    public User loginUser(String email, String password) {
-        Optional<User> userOptional = userRepository.findByEmail(email);
-        if (userOptional.isPresent()) {
-            User user = userOptional.get();
-            if (passwordEncoder.matches(password, user.getPassword())) {
-                return user;
-            }
-        }
-        return null;
-    }
-     public static String loginUser(User user) {
-        throw new UnsupportedOperationException("Unimplemented method 'loginUser'");
-     }
-}
 
+    // Login user
+    public String loginUser(User user) {
+        Optional<User> userOptional = userRepository.findByEmail(user.getEmail());
+        if (userOptional.isPresent()) {
+            User existingUser = userOptional.get();
+            if (passwordEncoder.matches(user.getPassword(), existingUser.getPassword())) {
+                return "Login successful!";
+            } else {
+                return "Invalid password!";
+            }
+        } else {
+            return "User not found!";
+        }
+    }
+}

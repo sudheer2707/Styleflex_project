@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Details - StyleFlex</title>
+  <link rel="stylesheet" href="../CSS/product-detail.css" />
+</head>
+<body>
+  <header>
+    <h1>StyleFlex</h1>
+    <a href="cart.html" class="cart-link">🛒 View Cart</a>
+  </header>
+
+  <main class="product-container">
+    <div class="image-box">
+      <img id="product-img" src="" alt="Product Image" />
+      <div class="icons">
+        <button class="icon-btn">❤️</button>
+        <button class="icon-btn">🔗</button>
+      </div>
+    </div>
+
+    <div class="product-info">
+      <h2 id="product-name">Loading...</h2>
+      <h4 id="product-brand">Brand</h4>
+      <p id="product-description">Please wait while we load the product.</p>
+      <p class="price">Price: ₹<span id="product-price">0</span></p>
+
+      <label for="product-quantity">Quantity:</label>
+      <input type="number" id="product-quantity" value="1" min="1" />
+
+      <div class="buttons">
+        <button id="add-to-cart-btn">Add to Cart</button>
+        <button id="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="../JS/product-detail.js"></script>
+</body>
+</html>

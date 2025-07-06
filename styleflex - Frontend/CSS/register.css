@@ -1,0 +1,61 @@
+:root {
+  --primary-bg: #ffffff;
+  --form-bg: #ffffff;
+  --box-shadow: rgba(0, 0, 0, 0.1);
+  --primary-text: #003366;       /* Deep blue */
+  --accent-color: #00bfff;       /* Sky blue */
+  --accent-hover: #009acd;       /* Hover sky blue */
+  --input-border: #ccc;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff; /* lightest blue background */
+  color: var(--primary-text);
+}
+
+.container {
+  width: 320px;
+  margin: 100px auto;
+  background: var(--form-bg);
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px var(--box-shadow);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary-text);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+}
+
+#message {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--primary-text);
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile - StyleFlex</title>
+  <link rel="stylesheet" href="../css/profile.css" />
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">StyleFlex</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../html/cart.html">Cart</a></li>
+        <li><a href="../html/checkout.html">Checkout</a></li>
+        <li><a href="../html/profile.html" class="active">Profile</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="profile-card">
+      <h2>User Profile</h2>
+      <img src="../images/user.png" alt="User Avatar" class="avatar">
+      <form id="profile-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" value="John Doe" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" value="john@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" value="9876543210" />
+        </div>
+        <button type="submit">Update Profile</button>
+      </form>
+      <p id="success-message" class="hidden">Profile updated successfully!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 StyleFlex. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/profile.js"></script>
+</body>
+</html>

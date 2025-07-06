@@ -4,7 +4,7 @@ fetch(apiUrl)
   .then(response => response.json())
   .then(products => {
     const container = document.getElementById('product-list');
-    const womenProducts = products.filter(p => 
+    const womenProducts = products.filter(p =>
       p.category && p.category.name.toLowerCase() === 'women'
     );
 
@@ -14,15 +14,18 @@ fetch(apiUrl)
     }
 
     womenProducts.forEach(product => {
-      const card = document.createElement('div');
-      card.className = 'product-card';
-      card.innerHTML = `
+      const link = document.createElement('a');
+      link.href = `product-detail.html?id=${product.id}`;
+      link.className = 'product-card';
+
+      link.innerHTML = `
         <img src="${product.imageUrl}" alt="${product.name}" />
         <h3>${product.name}</h3>
         <p>${product.description}</p>
         <p class="price">₹${product.price}</p>
       `;
-      container.appendChild(card);
+
+      container.appendChild(link);
     });
   })
   .catch(error => {

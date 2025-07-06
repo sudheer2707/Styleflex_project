@@ -1,3 +1,11 @@
+:root {
+  --primary-bg: #ffffff;
+  --primary-text: #003366;        /* Deep Blue */
+  --accent-color: #00bfff;        /* Sky Blue */
+  --card-bg: #ffffff;
+  --card-text: #444;
+}
+
 /* Reset & base styles */
 * {
   margin: 0;
@@ -7,8 +15,8 @@
 }
 
 body {
-  background-color: #f7f7f7;
-  color: #222;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
   line-height: 1.6;
 }
 
@@ -21,7 +29,7 @@ body {
 
 /* Navbar */
 header {
-  background-color: #1e1e1e;
+  background-color: var(--primary-text);
   color: white;
   padding: 15px 0;
   position: sticky;
@@ -39,7 +47,7 @@ header {
 .logo {
   font-size: 1.6rem;
   text-decoration: none;
-  color: white;
+  color: var(--accent-color);
   font-weight: bold;
 }
 
@@ -61,7 +69,7 @@ nav {
 }
 
 .nav-links li a:hover {
-  color: #f2a922;
+  color: var(--accent-color);
 }
 
 /* Mobile Menu */
@@ -89,7 +97,7 @@ nav {
   .nav-links {
     flex-direction: column;
     padding: 10px;
-    background-color: #1e1e1e;
+    background-color: var(--primary-text);
   }
 
   .nav-links li {
@@ -102,6 +110,7 @@ nav {
   font-size: 2rem;
   margin: 40px 0 20px;
   text-align: center;
+  color: var(--primary-text);
 }
 
 /* Product Grid */
@@ -114,7 +123,7 @@ nav {
 
 /* Product Card */
 .product-card {
-  background-color: #fff;
+  background-color: var(--card-bg);
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
@@ -130,7 +139,7 @@ nav {
 .product-card img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: contain;
   margin-bottom: 10px;
   border-radius: 6px;
 }
@@ -138,23 +147,24 @@ nav {
 .product-card h3 {
   font-size: 1.2rem;
   margin-bottom: 6px;
+  color: var(--primary-text);
 }
 
 .product-card p {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--card-text);
 }
 
 .product-card .price {
   font-weight: bold;
-  color: #1e1e1e;
+  color: var(--accent-color);
   font-size: 1rem;
   margin-top: 10px;
 }
 
 /* Footer */
 footer {
-  background-color: #1e1e1e;
+  background-color: var(--primary-text);
   color: white;
   text-align: center;
   padding: 15px 0;

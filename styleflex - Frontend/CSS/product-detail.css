@@ -1,0 +1,151 @@
+:root {
+  --primary-bg: #ffffff;
+  --primary-text: #003366;
+  --accent-color: #00bfff;
+  --accent-hover: #009acd;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Base Reset */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+/* Header */
+header {
+  padding: 1rem 2rem;
+  background-color: var(--primary-text);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Product Container */
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Image & Icons */
+.image-box {
+  position: relative;
+  max-width: 400px;
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--card-shadow);
+}
+
+.icons {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.icons span {
+  background: white;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.icons span:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Product Info */
+.product-info {
+  max-width: 500px;
+}
+
+.product-info h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-info h4 {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.product-info p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+#product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttons button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-box,
+  .product-info {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+}

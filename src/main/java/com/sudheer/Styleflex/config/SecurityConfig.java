@@ -9,13 +9,20 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable()) // Disable CSRF for testing with Postman
+            .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
-                .anyRequest().permitAll() // Allow all endpoints
-            );
+                .requestMatchers(
+                    "/api/users/register",
+                    "/api/users/login",
+                    "/Products/**" 
+                ).permitAll()
+                .anyRequest().authenticated()
+            )
+            .formLogin(form -> form.disable())
+            .httpBasic(basic -> basic.disable());
+
         return http.build();
     }
-    }
-
+}
